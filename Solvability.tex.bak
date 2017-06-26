@@ -1,0 +1,715 @@
+
+
+
+
+
+
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+%	SECTION: Outline
+%
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\section{Introduction}
+
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	FRAME: Overview
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\begin{frame}{Overview}
+
+We will discuss the subject in the following manner:
+
+\begin{itemize}
+	\item The Riccati inequality. Conditions of solvability 
+	\item Areas of application
+    \item Necessary conditions for solvability based on Hamiltonian matrices
+    \item Monotonic transformation of Hamiltonian matrices
+	\item Special transformation of Hamiltonian matrices
+    \item General Riccati inequalities case 
+    \begin{itemize}
+		\item \texttt{Jordan blocks of Hamiltonian Matrices with pure imaginary eigenvalues}
+		\item \texttt{Main result}
+		
+	\end{itemize}
+    
+\end{itemize}
+
+\end{frame}
+
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+%	SECTION: Introduction and Problem Statement
+%
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\section{Background}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	FRAME: Riccati Inequality Presented
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\begin{frame}{Problem under consideration}
+
+
+
+The matrix Riccati inequality arises in the theory of absolute stability, $H_{\infty}$ control problem, linear-quadratic (LQ) control problem, and optimal estimation problem. 
+	
+	\begin{block}{It has the form:}
+
+\begin{equation*}
+HA + A^{*}H + G - HB\Gamma ^{-1}B^{*}H < 0
+\end{equation*}
+\end{block}
+
+\begin{itemize}
+		\item \texttt{Where $A, B, G, \Gamma $ are given matrices of dimensions $n\times n, n\times m,
+n\times n$, and $m\times m$ respectively }
+		\item \texttt{$G, \Gamma $ are Hermitian matrices and $\det \Gamma
+\neq 0$ }
+\item \texttt{$ H$ is Herimitian matrix, solution to the inequality }
+		
+	\end{itemize}
+
+
+\end{frame}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	FRAME: Of Interest
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\begin{frame}{Of Interest}
+
+We are looking for necessary and sufficient conditions for existence of stabilizing and anti-stabilizing solutions of the inequality.
+ 
+	\begin{block}{That is: }
+    
+    \begin{itemize}
+\item Matrices $H_{-}$ (Stabilizing solution) and $H_{+}$ (Anti-stabilizing solution) both satisfies the inequality.
+\item Matrices $A-B\Gamma^{-1}B^{*}H_{-}$ and $-(A-B\Gamma^{-1}B^{*}H_{+})^{*}$ both being Hurwitz.
+	\end{itemize}
+
+\end{block}
+
+\footnotetext[0]{\tiny  Hurwitz matrix is a stability matrix with $Re[\lambda_{i}]<0$}
+\end{frame}
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	FRAME: Sign of the Matrix Gamma
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}{Sign of the Matrix Gamma ($\Gamma$)}
+
+\begin{itemize}
+
+\item In the case where $\Gamma$ is sign definite, the answer to this problem is given in the famous Kalman-Yakubovich lemma.
+
+
+
+\item For $x^{*}\Gamma x>0$ with $\forall x \in C^{n}\backslash \{0\}$ then solvability of the inequality may be reduced to solvability of an ARE.
+
+
+
+\begin{block}{A form of Algebraic Riccati equation (ARE): }
+
+\begin{equation*}
+HA + A^{*}H + G - HB\Gamma ^{-1}B^{*}H = 0
+\end{equation*}
+
+\end{block}
+\begin{itemize}
+\item \texttt{Which is closely related to the existence and properties of maximal $J$-orthogonal invariant subspaces of Hamiltonian matrices}
+\end{itemize}
+
+\end{itemize}
+
+\footnotetext[0]{\tiny Inequality: $HA + A^{*}H + G - HB\Gamma ^{-1}B^{*}H < 0$}
+\end{frame}
+
+
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	Frame: Riccati Inequalities and Kalman-Yakubovich Lemma 
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}{Kalman-Yakubovich Lemma}
+Assume the pair $(A,B)$ is controllable and matrix $A$ has no pure imaginary eigenvalues.
+ \begin{block}{}
+If matrix $\Gamma $ is negative definite, then the inequality may be represented as
+Linear Matrix Inequality (LMI):
+
+\begin{equation*}
+\left(\begin{array}{cc}
+HA + A^{*}H + G&HB \\
+ B^{*}H&\Gamma \end{array}\right)  < 0 \; \;
+\end{equation*}
+
+\end{block}
+
+\begin{itemize}
+
+\item \texttt{This may be solved via the interior point method.}
+ 
+ 
+\item Solvability of this inequality is also a subject of the famous Kalman-Yakubovich 
+lemma.
+ \end{itemize}   
+ 
+ 
+ \footnotetext[0]{\tiny Controllable: Full rank, i.e. L.I. row and column vectors}
+ \end{frame} 
+    
+    
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	Frame: Riccati Inequalities and Kalman-Yakubovich Lemma (Stated)
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}{Kalman-Yakubovich Lemma (Stated)}
+
+According to this lemma, the inequality has a solution, 
+if and only if, the following frequency domain inequality holds:
+
+\begin{equation*}
+\pi (i\omega ) < 0,
+\end{equation*}
+
+\noindent for all $\omega \in [-\infty , \infty ]$, where
+
+$$
+\pi (\lambda ) = \Gamma  + B^{*}(\lambda I+A^{*})^{-1}G(A-\lambda I)^{-1}B
+$$
+
+
+\begin{itemize}
+\item If matrix $\Gamma $ is not sign definite, then $\pi (i\omega ) < 0$ is obviously no longer necessary for solvability of the inequality.
+\end{itemize}
+
+
+\footnotetext[0]{\tiny Inequality: $HA + A^{*}H + G - HB\Gamma ^{-1}B^{*}H < 0$}
+\end{frame}     
+
+    
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	Frame:  Motivation
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}{Motivation}
+
+
+\begin{block}{\Large To be presented is:}
+
+ {\Large \underline{\bf Necessary} and \underline{\bf sufficient} conditions of solvability, a generalization 
+of Kalman Yakubovich lemma but for the case of \underline{\bf sign-indefinite quadratic forms}}.
+
+\end{block}
+
+
+
+\end{frame}     
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+%	SECTION: Hamiltonian Matrix 
+%
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\section{Hamiltonian Matrix}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	Frame: Hamiltonian Matrix (R)
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\begin{frame}{Hamiltonian Matrix $R$}
+
+\begin{block}{Consider:}
+
+\begin{equation*}
+R = \left(\begin{array}{cc}
+A&-B\Gamma ^{-1}B^{*} \\
+ -G&-A^{*}\end{array}\right) , \; \; \qquad J = \left(\begin{array}{cc}
+0&-I \\
+ I&0\end{array}\right)
+\end{equation*}
+
+\end{block}
+ 
+
+The set of eigenvalues of Hamiltonian matrix $R$ is symmetric with respect to the imaginary axis. 
+
+\begin{itemize}
+\item Indeed, Jordan blocks corresponding to $\lambda$ and $-\bar\lambda$ of $R$ coincide. 
+\end{itemize}
+
+
+\footnotetext[0]{\tiny $JR$ is clearly Hermitian and therefore matrix $R$ is ($J$-)
+Hamiltonian}
+
+\end{frame}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	Frame: Hamiltonian Matrix ((case of no eigenvalue on imaginary axis))
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\begin{frame}{Hamiltonian Matrix (Split Eigenvalues)}
+
+\begin{block}{}
+Assume matrix $R$ has no eigenvalues on the imaginary axis. 
+\end{block}
+
+$\exists  n\times n$ matrices $\Lambda$, $X_{1}$, $\Psi_{1}$, $X_{2}$, $\Psi_{2}  s.t.  \lambda_{i}$ of $\Lambda$ satisfy $Re[\lambda_{i}]<0$ and 
+
+\begin{equation*}
+ R \left(\begin{array}{cc} X_{1} & X_{2} \\ \Psi_{1} & \Psi_{2} \end{array}\right) =
+\left(\begin{array}{cc} X_{1} & X_{2} \\ \Psi_{1} & \Psi_{2} \end{array}\right)
+\left(\begin{array}{cc} \Lambda & 0 \\ 0 & -\Lambda^{*} \end{array}\right).
+\end{equation*}
+
+
+
+Then $A-B\Gamma^{-1}B^{*}H$  and $-(A-B\Gamma^{-1}B^{*}H)$ are Hurwitz, and $H$ is both a stabilizing solution and anti-stabilizing solution of the Riccati equation. 
+
+
+
+\footnotetext[0]{\tiny Riccati equation: $HA + A^{*}H + G - HB\Gamma ^{-1}B^{*}H = 0$}
+
+\end{frame}
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	Frame: Hamiltonian Matrix (Continued)
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+\begin{frame}{Hamiltonian Matrix (Continued)}
+
+\begin{block}{}
+If $H$ is a solution of the Riccati inequality, then $\exists \Delta G  > 0 $ s.t. 
+
+\begin{equation*}\label{REM}
+HA + A^{*}H + G + \Delta G - HB\Gamma^{-1}B^{*}H = 0
+\end{equation*}
+\end{block}
+
+Assume $H$ is a stabilizing solution of equation. Then: 
+
+$$ R_{new} = \left(\begin{array}{cc}
+A & -B\Gamma^{-1}B^{*} \\  -G-\Delta G & -A^{*} \end{array}\right)
+$$
+
+\noindent and we have $A-B\Gamma^{-1}B^{*}H=X_{1}\Lambda X_{1}^{-1}$, therefore $\Lambda$ is Hurwitz. 
+
+\begin{block}
+
+This means that $R_{new}$ has no pure imaginary eigenvalues.
+\end{block}
+
+
+\footnotetext[0]{\tiny Inequality: $HA + A^{*}H + G - HB\Gamma ^{-1}B^{*}H < 0$}
+\end{frame}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+%	SECTION: Special Transformation 
+%
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\section{Special transformation}
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	Frame: Special Transformation
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}{Special Transformation }
+
+Assume $V_{1}$, $V_{2}$ are $n\times m$ matrices, and $V=col(V_{1},V_{2})$.
+
+\begin{equation*}
+R(V)=R + V(JV)^{*} = \left(\begin{array}{cc} 
+A-V_{1}V_{2}^{*} & -B\Gamma^{-1}B^{*}+V_{1}V_{1}^{*} \\  
+-G-V_{2}V_{2}^{*} & -A^{*}+V_{2}V_{1}^{*} \end{array}\right)
+\end{equation*}
+
+
+
+For a solution $H$ of it's corresponding equation, we have:
+
+\begin{equation*}
+HA + A^{*}H + G - HB\Gamma^{-1}B^{*}H = -(V_{2}-HV_{1})(V_{2}-HV_{1})^{*} \le 0
+ \end{equation*}
+
+\begin{itemize}
+\item If right hand side is strictly negative, then $H$ solves inequality. \end{itemize} 
+
+\footnotetext[0]{\tiny Inequality: $HA + A^{*}H + G - HB\Gamma ^{-1}B^{*}H < 0$}
+\end{frame}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+%	SECTION: Special Transformation 
+%
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\section{Special Case}
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	Frame: Special Case
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}{Special Case}
+
+Assume $R$ has no pure imaginary eigenvalues, then for sufficiently small positive $\epsilon$, $R(\epsilon I)$ also has no pure imaginary eigenvalues. 
+
+\begin{block}{}
+$\forall  \delta > 0$, $\exists \tilde R $ such that: 
+
+$$ \tilde R = \left(\begin{array}{cc} 
+\tilde A & -\tilde B\tilde\Gamma ^{-1}\tilde B^{*} + \epsilon I \\  
+-\tilde G -\epsilon I & -\tilde A^{*} \end{array}\right)
+$$
+for $\|R(\epsilon I)-\tilde R\|<\delta$, where matrices $X_{1}$, $X_{2}$ are nonsingular
+\end{block}
+
+
+If $H$ is a stabilizing solution, then 
+$$\begin{array}{c} HA + A^{*}H + G - HB\Gamma^{-1}B^{*}H = \\
+= H(A-\tilde A) + (A-\tilde A)^{*}H + (G-\tilde G+\epsilon I) - \\
+- (HB\Gamma^{-1}B^{*}H - H\tilde B\tilde\Gamma^{-1}\tilde B^{*}H) + H\epsilon H.
+\end{array}
+$$ 
+
+\begin{itemize}
+\item For sufficiently small $\delta$, right hand side of the equality is negative. Thus, $H$ is a solution to the inequality.
+\end{itemize}
+
+
+
+\end{frame}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	Frame: Special Case (Continued)
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}{Special Case (Continued)}
+
+Since matrix $\tilde A - \tilde B\tilde\Gamma^{-1}\tilde B^{*}H$ is Hurwitz, for sufficiently small number $\delta$ the matrix $A-B\Gamma^{-1}B^{*}H$ is Hurwitz, and $H$ is a stabilizing solution of the inequality.
+
+\begin{block}{}
+It turns out that the same conclusion is true for the anti-stabilizing solution of the inequality.
+\end{block}
+
+\begin{itemize}
+\item Thus, if matrix $R$ has no pure imaginary eigenvalues, then the Riccati inequality has both stabilizing and anti-stabilizing solutions. 
+\end{itemize}
+
+
+\footnotetext[0]{\tiny Inequality: $HA + A^{*}H + G - HB\Gamma ^{-1}B^{*}H < 0$}
+\end{frame}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+%	SECTION: General Case 
+%
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\section{General Case}
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	Frame: General Case (Definition 1)
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\begin{frame}{General Case}
+
+\begin{definition} Let $P$ be a subspace of ${\bf C}^{2n}$, and $T$ a matrix with set of columns forming a basis of $P$. Denote $n_{+}(P)$: numbers of positive eigenvalues, $n_{0}(P)$: numbers of zero eigenvalues, and $n_{-}(P)$: number of negative eigenvalues of matrix $T^{*}iJT$. 
+\end{definition}
+
+
+Denote by $J_{1},\ldots,J_{m}$ all Jordan blocks of matrix $R$ with pure imaginary eigenvalues $i\omega_{1},\ldots,i\omega_{m}$ respectively:
+
+$$ J_{j} = \left(\begin{array}{ccccc} i\omega_{j} & 1 & 0 & \ldots & 0 \\
+0 & i\omega_{j} & 1 & \ldots & 0 \\ \ldots & \ldots & \ldots & \ldots & \ldots \\ 0 & 0 & 0 & \ldots & i\omega_{j} \end{array}\right)
+$$
+
+
+
+\end{frame}
+
+
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	Frame: General Case (Definition 2)
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\begin{frame}{General Case (Definition 2)}
+
+
+\begin{definition} We say that the block $J_{j}$ contains $n_{+}(J_{j})$ eigenvalues $i\omega_{j}$ of the first type, and $n_{-}(J_{j})$ eigenvalues $i\omega_{j}$ of the second type.
+\end{definition}
+
+
+
+For every subspace $P_{j}$ there exist a number $\beta_{j}\in\{-1,1\}$, and a matrix $S_{j}$ such that the columns of $S_{j}$ span $P_{j}$, $RS_{j}=S_{j}J_{j}$, 
+
+$$ S_{j}^{*}JS_{j} = \epsilon_{j} \left(\begin{array}{ccccc} 0 & 0 & \ldots & 0 & -1 \\
+0 & 0 & \ldots & (-1)^{2} & 0 \\  \ldots &  \ldots &  \ldots &  \ldots &  \ldots \\ (-1)^{m_{j}} & 0 & \ldots & 0 & 0 \end{array}\right)
+$$
+
+
+
+
+\end{frame}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	Frame: General Case (Continued)
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}{General Case (Continued)}
+
+\begin{block}{We know that:}
+
+\begin{enumerate}
+
+
+\item if the size $n_{j}$ of $J_{j}$ is even, then $n_{+}(J_{j})-n_{-}(J_{j})=0$ and $\epsilon_{j}=(-1)^{n_{j}/2}\beta_{j}$ ;
+
+\item if the size $n_{j}$ of $J_{j}$ is odd, then $n_{+}(J_{j})-n_{-}(J_{j})=\beta_{j}$ and $\epsilon_{j}=(-1)^{(n_{j}-1)/2}i\beta_{j}$.
+
+\end{enumerate}
+
+\end{block}
+
+\qquad
+
+Moreover, matrices $S_{j}$ for distinct $j$ are $J$-orthogonal: $S_{j_{1}}^{*}JS_{j_{2}}=0$ if $j_{1}\ne j_{2}$.
+
+%\begin{block}
+
+
+%The value $\beta_{j}$ is called index of $J_{j}$, and we call invariant space $P_{j}$ neutral, of the %first type, or of the second type, $n_{+}(J_{j})-n_{-}(J_{j})$ is equal to respectively zero, one or %negative one.
+%\end{block}
+
+\end{frame}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	Frame: General Case (Continued)
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}{General Case (Continued)}
+
+
+Denote by $S_{+}$ ($S_{-}$) a matrix whose columns span the $R$-invariant subspace associated to eigenvalues with positive (respectively, negative) real parts. 
+
+\begin{block}{} 
+$S_{+}$ and $S_{-}$ are $J$-orthogonal to $S_{j}$ for every $j=1,\ldots,m$ and all columns of matrices $S_{-}$, $S_{+}$, $S_{1},\ldots,S_{m}$ form a basis of ${\bf C}^{2n}$.
+\end{block}
+\begin{block}{}
+
+
+Fix $j\in \{1,\ldots,m\}$ and consider $V$ such that $JV$ is orthogonal to $S_{-}$, $S_{+}$, and all matrices $S_{k}$ with $k\ne j$. Then 
+
+$$ \begin{array}{c} \det(R + V(JV)^{*} -\lambda I)=\det(R-\lambda I) (1+(JV)^{*}(R-\lambda I)^{-1}V)= \\
+= \det(R-\lambda I) (1+(JV)^{*}S_{j}(J_{j}-\lambda I)^{-1}(S_{j}^{*}JS_{j})^{-1}S_{j}^{*}JV)
+\end{array}
+$$
+\end{block}
+
+\end{frame}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	Frame: General Case (Continued)
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}{General Case (Continued)}
+
+
+Denote $P_{j}=S_{j}^{*}JS_{j}/\epsilon_{j}$, then
+ we have $P_{j}^{-1}=(-1)^{m_{j}-1}P_{j}$, and 
+ 
+
+\qquad
+
+
+$$ (J_{j}-\lambda I)^{-1} = 
+\left(\begin{array}{cccc}
+\frac{1}{i\omega_{j}-\lambda} & \frac{-1}{(i\omega_{j}-\lambda)^{2}} & \ldots & \frac{(-1)^{m_{j}-1}}{(i\omega_{j}-\lambda)^{m_{j}}} \\
+0 & \frac{1}{i\omega_{j}-\lambda} & \ldots & \frac{(-1)^{m_{j}-2}}{(i\omega_{j}-\lambda)^{m_{j}-1}} \\
+\ldots & \ldots & \ldots & \ldots \\ 0 & 0 & \ldots & 
+\frac{1}{i\omega_{j}-\lambda} \end{array}\right)$$
+
+
+
+%\footnotetext[0]{\tiny Inequality: $HA + A^{*}H + G - HB\Gamma ^{-1}B^{*}H < 0$}
+
+\end{frame}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	Frame: General Case (Continued)
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}{General Case (Continued)}
+
+
+For even $m_{j}=2r_{j}$ we have $\epsilon_{j}=(-1)^{r_{j}}\beta_{j}$, and for $\lambda = i\omega$
+
+
+
+We have $(J_{j}-i\omega I)^{-1}(\epsilon_{j}P_{j})^{-1}=$    
+
+$$= 
+\beta \left(\begin{array}{cccc}
+\frac{1}{(\omega_{j}-\omega)^{2r_{j}}} & 
+\frac{i}{(\omega_{j}-\omega)^{2r_{j}-1}} & \ldots & \frac{i(-1)^{r_{j}+1}}{\omega_{j}-\omega} \\ 
+\frac{-i}{(\omega_{j}-\omega)^{2r_{j}-1}} & 
+\frac{1}{(\omega_{j}-\omega)^{2r_{j}-2}} & \ldots & 0 \\
+\ldots & \ldots & \ldots & \ldots  \\
+\frac{i(-1)^{r_{j}}}{\omega_{j}-\omega} & 0 & \ldots & 0 \end{array}\right)
+$$
+
+
+If we choose vector $V$ such that $S_{k}^{*}(JV)=0$ for all $k\ne j$, and $S_{j}^{*}(JV)=(\delta,0,\ldots,0)^{*}$, then 
+
+$$ 1+(JV)^{*}S_{j}(J_{j}-\lambda I)^{-1}(S_{j}^{*}JS_{j})^{-1}S_{j}^{*}JV = 
+1+\delta^{2}\beta_{j} \frac{1}{(\omega_{j}-\omega)^{2r_{j}}}
+$$
+
+\end{frame}
+
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	Frame: General Case (Continued)
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}{General Case (Continued)}
+
+\begin{block}{}
+Now let $m_{j}=2r_{j}+1$, then $\epsilon_{j}=(-1)^{r_{j}}i\beta$, and for $\lambda=i\omega$, we get:
+\end{block}
+
+$$ (J_{j}-i\omega I)^{-1}(\epsilon_{j}P_{j})^{-1} = 
+\beta \left(\begin{array}{cccc}
+\frac{1}{(\omega_{j}-\omega)^{2r_{j}+1}} & 
+\frac{i}{(\omega_{j}-\omega)^{2r_{j}}} & \ldots & \frac{(-1)^{r_{j}}}{\omega_{j}-\omega} \\ 
+\frac{-i}{(\omega_{j}-\omega)^{2r_{j}}} & 
+\frac{1}{(\omega_{j}-\omega)^{2r_{j}-1}} & \ldots & 0 \\
+\ldots & \ldots & \ldots & \ldots  \\
+\frac{(-1)^{r_{j}}}{\omega_{j}-\omega} & 0 & \ldots & 0 \end{array}\right).
+$$
+
+Again, if $V$ is such that $S_{k}^{*}(JV)=0$ for all $k\ne j$, and $S_{j}^{*}(JV)=(\delta,0,\ldots,0)^{*}$, then 
+
+$$ 1+(JV)^{*}S_{j}(J_{j}-\lambda I)^{-1}(S_{j}^{*}JS_{j})^{-1}S_{j}^{*}JV = 
+1+\delta^{2}\beta_{j} \frac{1}{(\omega_{j}-\omega)^{2r_{j}+1}}
+$$
+
+\end{frame}
+
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	Frame: General Case (Theorem 1)
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}{General Case (Theorem 1)}
+
+
+\begin{theorem}
+There exists a nonnegative matrix $M$ such that the eigenvalues of matrix $R-tMJ$ with number $t$ increasing from zero have the following behaviour.
+\begin{enumerate}
+
+
+\item For each Jordan block $J_{j}$ of matrix $R$ of odd dimension $2r_{j}+1$ with index $\beta=1$ exactly $2r_{j}$ eigenvalues leave imaginary axis with increasing $t$ from zero, and the rest eigenvalue goes up imaginary axis, and has the first type.
+
+\item For each Jordan block $J_{j}$ of matrix $R$ of odd dimension $2r_{j}+1$ with index $\beta=-1$ exactly $2r_{j}$ eigenvalues leave imaginary axis with increasing $t$ from zero, and the rest eigenvalue goes down imaginary axis, and has the second type.
+
+\end{enumerate}
+\end{theorem}
+\end{frame}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+ %	Frame: General Case (Theorem 1 continued)
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}{General Case (Theorem 1 continued)}
+\begin{theorem}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item For each Jordan block $J_{j}$ of matrix $R$ of even dimension $2r_{j}$ with index $\beta=1$ all eigenvalues leave imaginary axis with increasing $t$ from zero.
+
+\item For each Jordan block $J_{j}$ of matrix $R$ of even dimension $2r_{j}$ with index $\beta=-1$ exactly $2r_{j}-2$ eigenvalues leave imaginary axis with increasing $t$ from zero. One of the rest eigenvalues goes up imaginary axis and has the first type, and the other eigenvalue goes down imaginary axis and has the second type.
+\end{enumerate}
+
+\end{theorem}
+
+
+\end{frame}
+
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	Frame: General Case (Theorem 2)
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}{General Case (Theorem 2)}
+Denote 
+
+$$ s(\omega) = \sum (m_{+}(\omega)-m_{-}(\omega)) - m_{0}(\omega)$$
+
+\begin{itemize}
+
+\item where $m_{+}(\omega)$ is the number of odd dimensional Jordan blocks matrix $R$ with eigenvalues $i\omega_{j}$ such that $\omega_{j} < \omega$ and $\beta =1$
+
+\item $m_{-}(\omega)$ is the number of odd dimensional Jordan blocks of matrix $R$ with eigenvalues $i\omega_{j}$ such that $\omega_{j} \le \omega$ , $\beta =-1$ and 
+
+\item $m_{0}(\omega)$ is the number of even dimensional Jordan blocks of matrix $R$ with eigenvalues $i\omega$ such that $\beta=-1$. 
+
+\end{itemize}
+
+
+
+
+\end{frame}
+
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	Frame: General Case (Theorem 3)
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}{General Case (Theorem 3)}
+
+\begin{theorem}
+
+$\exists M$ with $ M > 0$ s.t. $R-MJ$ has no pure imaginary eigenvalues of odd multiplicity $\iff$ for every pure imaginary eigenvalue $i\omega_{j}$ of $R$ we have
+
+\begin{equation*}\label{main}  
+s(\omega)\ge 0
+\end{equation*}
+
+\end{theorem}
+
+
+Taking into account our results earlier, we get the following {\bf main result}:
+
+
+
+\begin{theorem}[Main Result]
+
+The Riccati inequality  has a solution $\iff$ inequality $s(\omega)\ge 0$ holds $\forall \omega\in R$.
+
+\end{theorem}
+
+\footnotetext[0]{\tiny $ s(\omega) = \sum (m_{+}(\omega)-m_{-}(\omega)) - m_{0}(\omega)$}
+
+\end{frame}
+
+
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+%	SECTION: Conclusion
+%
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\section{Conclusion}
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	Frame: Conclusion
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}{Conclusion}
+
+
+We considered conditions of solvability of the Riccati inequality
+
+\begin{itemize}
+	
+	
+    \item First presented necessary conditions for sovability based on Hamiltonian matrices
+    \item Then considered a monotonic transformation of Hamiltonian matrices
+	\item Used a special transformation of Hamiltonian matrices
+    \item Considered a general case
+    \begin{itemize}
+
+
+    \item \texttt{ Presented the main result, a new theorem}
+    \end{itemize}
+    
+    
+		
+	\end{itemize}
+    
+
+
+\end{frame}
+
