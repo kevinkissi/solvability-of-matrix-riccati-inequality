@@ -1,7 +1,3 @@
-## Solvability of Matrix Riccati Inequality Talk Slides
-
-Included is the source code of a 15min presentation slides. 
-It goes beyond standard Beamer latex to showcase the best use of color and design in Mathematical talk slides.
 
 ## Solvability of Matrix Riccati Inequality Paper
 
@@ -11,3 +7,9 @@ We consider matrix Riccati inequality arising in the theory of absolute stabilit
 
 The paper itself is archived at arxiv.org (https://arxiv.org/abs/1505.04861) with pdf at:
 https://arxiv.org/pdf/1505.04861.pdf 
+
+
+## Solvability of Matrix Riccati Inequality Talk Slides
+
+Included is the source code of a 15min presentation slides. 
+It goes beyond standard Beamer latex to showcase the best use of color and design in Mathematical talk slides. Slides are shared here: https://www.slideshare.net/KevinKissi/solvability-of-matrix-riccati-inequality-talk-slides
