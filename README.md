@@ -1,7 +1,8 @@
 # Solvability of Matrix Riccati Inequality Talk Slides
 
-Included is the source code of the 15min presentation slides. 
-It goes beyond Beamer latex to showcase the best use of color and design in a Mathematical talk slide.
+Included is the source code of a 15min presentation slides. 
+It goes beyond standard Beamer latex to showcase the best use of color and design in Mathematical talk slides.
 
-The paper itself is archived at arxiv.org with pdf at:
+# Solvability of Matrix Riccati Inequality Paper
+The paper itself is archived at arxiv.org (https://arxiv.org/abs/1505.04861) with pdf at:
 https://arxiv.org/pdf/1505.04861.pdf 
