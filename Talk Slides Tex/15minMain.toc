@@ -1,0 +1,10 @@
+\beamer@endinputifotherversion {3.33pt}
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@sectionintoc {2}{Background}{3}{0}{2}
+\beamer@sectionintoc {3}{Hamiltonian Matrix}{9}{0}{3}
+\beamer@sectionintoc {4}{Special transformation}{12}{0}{4}
+\beamer@sectionintoc {5}{Special Case}{13}{0}{5}
+\beamer@sectionintoc {6}{General Case}{15}{0}{6}
+\beamer@sectionintoc {7}{Conclusion}{26}{0}{7}
+\beamer@subsectionintoc {7}{1}{Questions}{27}{0}{7}
+\beamer@subsectionintoc {7}{2}{Thanks}{28}{0}{7}
